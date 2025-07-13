@@ -1,39 +1,35 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        // integer
-        int age = 25;
-        System.out.println(age);
+        // create scanner
+        Scanner scanner = new Scanner(System.in);
 
-        int year = 2025;
-        System.out.println("The year is " + year);
+        // reading string
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name);
 
-        // double
-        double price = 19.99;
-        System.out.println("The price is " + price);
+        // reading integer
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        System.out.println("Your age is: " + age);
 
-        double temperature = -12.5;
-        System.out.println("The temperature is " + temperature);
+        // reading double
+        System.out.print("What is the price: ");
+        double price = scanner.nextDouble();
+        System.out.println("Price is: " + price);
 
-        // char
-        char grade = 'B';
-        System.out.println("The grade is " + grade);
+        // reading boolean
+        System.out.print("Are you a student? (true/false): ");
+        boolean isStudent = scanner.nextBoolean();
+        System.out.println("You are a student: " + isStudent);
 
-        // boolean
-        boolean isStudent = false;
-        System.out.println(isStudent);
-
-        boolean isMarried = true;
-        System.out.println(isMarried);
-
-        // string
-        String name = "James";
-        System.out.println("Your name is " + name);
-
-        // string concatenation
-        String firstname = "John";
-        String lastname = "Doe";
-        System.out.println(firstname + " " + lastname);
+        // clean the buffer
+        scanner.nextLine();
+        
+        scanner.close();
     }
 }
