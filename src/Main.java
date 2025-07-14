@@ -4,42 +4,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Arithmetic Operators
+        // Shopping Cart Program
+        Scanner scanner = new Scanner(System.in);
 
-        int x = 10;
-        int y = 3;
-        int z;
+        String item;
+        double price;
+        int quantity;
+        char currency = '$';
+        double total;
 
-        z = x + y;
-        z = x - y;
-        z = x * y;
-        z = x / y;
-        z = x % y;
+        System.out.print("What item would you like to buy?: ");
+        item = scanner.nextLine();
 
-        // Augmented Assignment Operators
-        x += 3;
-        x -= 3;
-        x *= 3;
-        x /= 3;
-        x %= 3;
+        System.out.print("What is the price for each?: ");
+        price = scanner.nextDouble();
 
-        // Increment and Decrement
-        int a = 1;
-        a++;
+        System.out.print("How many would you like?: ");
+        quantity = scanner.nextInt();
 
-        int b = 2;
-        b--;
+        total = price * quantity;
 
-        // Order of Operations PENDAS:
-        // Parenthesis
-        // Exponent
-        // Multiplication
-        // Division
-        // Addition
-        // Subtraction
+        System.out.println("\nYou have bought " + quantity + " " + item + "/s");
+        System.out.println("Your total is " + currency + total);
 
-        double result = 3 + 4 * (7 - 5) / 2.0;
-
-        System.out.println(result);
+        scanner.close();
     }
 }
