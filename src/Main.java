@@ -4,35 +4,42 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Mad Libs Game
-        Scanner scanner = new Scanner(System.in);
+        // Arithmetic Operators
 
-        String adjective1;
-        String noun1;
-        String adjective2;
-        String verb1;
-        String adjective3;
+        int x = 10;
+        int y = 3;
+        int z;
 
-        System.out.print("Enter an adjective: ");
-        adjective1 = scanner.nextLine();
+        z = x + y;
+        z = x - y;
+        z = x * y;
+        z = x / y;
+        z = x % y;
 
-        System.out.print("Enter a noun: ");
-        noun1 = scanner.nextLine();
+        // Augmented Assignment Operators
+        x += 3;
+        x -= 3;
+        x *= 3;
+        x /= 3;
+        x %= 3;
 
-        System.out.print("Enter an adjective: ");
-        adjective2 = scanner.nextLine();
+        // Increment and Decrement
+        int a = 1;
+        a++;
 
-        System.out.print("Enter a verb end with -ing: ");
-        verb1 = scanner.nextLine();
+        int b = 2;
+        b--;
 
-        System.out.print("Enter an adjective: ");
-        adjective3 = scanner.nextLine();
+        // Order of Operations PENDAS:
+        // Parenthesis
+        // Exponent
+        // Multiplication
+        // Division
+        // Addition
+        // Subtraction
 
-        System.out.println("\nToday I went to a " + adjective1 + " zoo.");
-        System.out.println("In an exhibit I saw a " + noun1 + '.');
-        System.out.println(noun1 + " was " + adjective2 + " and " + verb1 + ".");
-        System.out.println("I was " + adjective3 + "!");
+        double result = 3 + 4 * (7 - 5) / 2.0;
 
-        scanner.close();
+        System.out.println(result);
     }
 }
