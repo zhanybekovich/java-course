@@ -4,32 +4,51 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Nested if statements
-        boolean isStudent = true;
-        boolean isSenior = true;
-        double price = 9.99;
+        // String methods
+        String name = "John Doe";
 
-        if (isStudent) {
+        // length
+        int length = name.length();
+        System.out.println(length);
 
-            if (isSenior) {
-                System.out.println("You get a senior discount of 20%");
-                System.out.println("You get a student discount of 10%");
-                price *= 0.7;
-            } else {
-                System.out.println("You get a student discount of 10%");
-                price = price * 0.9;
-            }
+        // charAt
+        char letter = name.charAt(0);
+        System.out.println(letter);
 
+        // index
+        int index = name.indexOf("o");
+        System.out.println(index);
 
-        } else {
-            if (isSenior) {
-                System.out.println("You get a senior discount of 20%");
-                price *= 0.8;
-            } else {
-                price *= 1;
-            }
-        }
+        // last index
+        int lastIndex = name.lastIndexOf("o");
+        System.out.println(lastIndex);
 
-        System.out.printf("The price of a ticket is: $%.2f", price);
+        // uppercase
+        name = name.toUpperCase();
+        System.out.println(name);
+
+        // lowerCase
+        name = name.toLowerCase();
+        System.out.println(name);
+
+        // trim
+        name = name.trim();
+        System.out.println(name);
+
+        // replace
+        name = name.replace("o", "e");
+        System.out.println(name);
+
+        // is empty
+        System.out.println(name.isEmpty());
+
+        // check
+        System.out.println(name.contains("D"));
+
+        // check if strings are equal
+        System.out.println(name.equals("john doe"));
+
+        // check if string are equal ignoring the case
+        System.out.println(name.equalsIgnoreCase("bob"));
     }
 }
