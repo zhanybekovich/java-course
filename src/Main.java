@@ -1,40 +1,26 @@
-
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Math
+        Scanner scanner = new Scanner(System.in);
 
-        // PI
-        System.out.println(Math.PI);
+        // Hypotenuse c = Math.sqrt(a^2 + b^2)
+        double a;
+        double b;
+        double c;
 
-        // E
-        System.out.println(Math.E);
+        System.out.print("Enter the length of side A: ");
+        a = scanner.nextDouble();
 
-        // Power
-        System.out.println(Math.pow(2, 3));
+        System.out.print("Enter the length of side B: ");
+        b = scanner.nextDouble();
 
-        // Abs
-        System.out.println(Math.abs(-5));
+        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 
-        // SQRT
-        System.out.println(Math.sqrt(9));
+        System.out.println("C is: " + c);
 
-        // Round to closest int
-        System.out.println(Math.round(3.12));
-        System.out.println(Math.round(3.5));
-
-        // Round up
-        System.out.println(Math.ceil(4.15));
-
-        // Round down
-        System.out.println(Math.floor(4.99));
-
-        // Max
-        System.out.println(Math.max(3, 7));
-
-        // Min
-        System.out.println(Math.min(3, 7));
+        scanner.close();
     }
 }
