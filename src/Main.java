@@ -1,26 +1,40 @@
-import java.util.Random;
+
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Generating random values
+        // Math
 
-        Random random = new Random();
+        // PI
+        System.out.println(Math.PI);
 
-        // random integer
-        int number;
-        number = random.nextInt();
+        // E
+        System.out.println(Math.E);
 
-        // range from 1 to 6
-        int myRandom = random.nextInt(1, 7);
+        // Power
+        System.out.println(Math.pow(2, 3));
 
-        // random double (0 --- 1)
-        double myDouble = random.nextDouble();
+        // Abs
+        System.out.println(Math.abs(-5));
 
-        // random boolean
-        boolean myBoolean = random.nextBoolean();
+        // SQRT
+        System.out.println(Math.sqrt(9));
 
-        System.out.println(myBoolean);
+        // Round to closest int
+        System.out.println(Math.round(3.12));
+        System.out.println(Math.round(3.5));
+
+        // Round up
+        System.out.println(Math.ceil(4.15));
+
+        // Round down
+        System.out.println(Math.floor(4.99));
+
+        // Max
+        System.out.println(Math.max(3, 7));
+
+        // Min
+        System.out.println(Math.min(3, 7));
     }
 }
