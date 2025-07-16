@@ -4,51 +4,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // String methods
-        String name = "John Doe";
+        // .substring() = a method used to extract a portion of a string
+        // string.substring(start, end)
 
-        // length
-        int length = name.length();
-        System.out.println(length);
+        Scanner sc = new Scanner(System.in);
 
-        // charAt
-        char letter = name.charAt(0);
-        System.out.println(letter);
+        String email;
+        System.out.print("Enter your email: ");
+        email = sc.nextLine();
 
-        // index
-        int index = name.indexOf("o");
-        System.out.println(index);
+        if (email.contains("@")) {
+            String username = email.substring(0, email.indexOf("@"));
+            String domain = email.substring(email.indexOf("@") + 1);
 
-        // last index
-        int lastIndex = name.lastIndexOf("o");
-        System.out.println(lastIndex);
+            System.out.println(username);
+            System.out.println(domain);
+        } else {
+            System.out.println("Invalid email!");
+        }
 
-        // uppercase
-        name = name.toUpperCase();
-        System.out.println(name);
 
-        // lowerCase
-        name = name.toLowerCase();
-        System.out.println(name);
-
-        // trim
-        name = name.trim();
-        System.out.println(name);
-
-        // replace
-        name = name.replace("o", "e");
-        System.out.println(name);
-
-        // is empty
-        System.out.println(name.isEmpty());
-
-        // check
-        System.out.println(name.contains("D"));
-
-        // check if strings are equal
-        System.out.println(name.equals("john doe"));
-
-        // check if string are equal ignoring the case
-        System.out.println(name.equalsIgnoreCase("bob"));
+        sc.close();
     }
 }
