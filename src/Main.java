@@ -4,25 +4,38 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // .substring() = a method used to extract a portion of a string
-        // string.substring(start, end)
+        // Weight Conversion Program
 
         Scanner sc = new Scanner(System.in);
 
-        String email;
-        System.out.print("Enter your email: ");
-        email = sc.nextLine();
+        double weight;
+        double newWeight;
+        int choice;
 
-        if (email.contains("@")) {
-            String username = email.substring(0, email.indexOf("@"));
-            String domain = email.substring(email.indexOf("@") + 1);
+        System.out.println("Weight Conversion Program");
+        System.out.println("1: Convert lbs to kgs");
+        System.out.println("2: Convert kgs to lbs");
 
-            System.out.println(username);
-            System.out.println(domain);
+        System.out.print("Choose an option: ");
+        choice = sc.nextInt();
+
+        if (choice == 1) {
+            System.out.print("Please enter the weight in lbs: ");
+            weight = sc.nextDouble();
+
+            newWeight = weight * 0.453592;
+
+            System.out.printf("The new weight in kgs is %.2f ", newWeight);
+        } else if (choice == 2) {
+            System.out.print("Please enter the weight in kgs: ");
+            weight = sc.nextDouble();
+
+            newWeight = weight * 2.20462;
+
+            System.out.printf("The new weight in lbs is %.2f ", newWeight);
         } else {
-            System.out.println("Invalid email!");
+            System.out.println("Invalid choice");
         }
-
 
         sc.close();
     }
