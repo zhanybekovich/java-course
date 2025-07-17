@@ -4,22 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Ternary operator
-        int score = 140;
+        // Temperature Conversion Program
+        Scanner sc = new Scanner(System.in);
 
-        String passOrFail = (score >= 60) ? "PASS" : "FAIL";
-        System.out.println(passOrFail);
+        double temp;
+        double newTemp;
+        String unit;
 
-        int number = 4;
-        String evenOrOdd = (number % 2 == 0) ? "EVEN" : "ODD";
-        System.out.println(evenOrOdd);
+        System.out.print("Enter the temperature: ");
+        temp = sc.nextDouble();
+        System.out.print("Convert to Celsius or Fahrenheit? (C or F): ");
+        unit = sc.next().toUpperCase();
 
-        int hours = 22;
-        String timeOfDay = (hours < 12) ? "AM" : "PM";
-        System.out.println(timeOfDay);
+        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp * 5 / 9) + 32;
 
-        int income = 60000;
-        double taxRate = (income >= 40000) ? 0.25 : 0.15;
-        System.out.println(taxRate);
+        System.out.printf("The temperature is %.1f°%s", newTemp, unit);
+
+        sc.close();
+
     }
 }
