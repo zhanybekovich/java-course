@@ -4,40 +4,64 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Logical Operators
-        // && -> AND
-        // || -> OR
-        // ! -> NOT
+        // While loop
         Scanner sc = new Scanner(System.in);
 
-        double temp = 25;
-        boolean isSunny = true;
+        String name = "";
 
-        if (temp <= 30 && temp >= 0 && isSunny) {
-            System.out.println("The weather is good!");
-            System.out.println("It is sunny!");
-        } else if (temp <= 30 && temp >= 0 && !isSunny) {
-            System.out.println("The weather is good!");
-            System.out.println("It is cloudy!");
-        } else if (temp >= 30 || temp < 0) {
-            System.out.println("The weather is bad!");
+        while (name.isEmpty()) {
+            System.out.print("Please enter your name: ");
+            name = sc.nextLine();
         }
+
+        System.out.println("Hello, " + name + "!");
+
+        System.out.println("======");
+
+        String response = "";
+
+        while (!response.equals("Q")) {
+            System.out.println("You are playing a game!");
+            System.out.print("Press Q to quit: ");
+            response = sc.nextLine().toUpperCase();
+
+        }
+
+        System.out.println("You have quit the game!");
 
         System.out.println("========");
 
-        String username;
+        // do while
+        int age;
 
-        System.out.print("Enter your username: ");
-        username = sc.nextLine();
+        do {
+            System.out.println("Your age can't be negative!");
+            System.out.print("Enter your age: ");
+            age = sc.nextInt();
+        } while (age < 0);
 
-        if (username.length() < 4 || username.length() > 12) {
-            System.out.println("Username must be between 4 and 12 characters!");
-        } else if (username.contains(" ") || username.contains("_")) {
-            System.out.println("Username must not contain spaces or _!");
+        System.out.println("You are " + age + " years old!");
 
-        } else {
-            System.out.println("Welcome " + username);
+        System.out.println("========");
+
+        int number = 0;
+
+        do {
+            System.out.print("Enter a number between 1 and 10: ");
+            number = sc.nextInt();
+
+        } while (number < 1 || number > 10);
+
+        System.out.println("You picked " + number + "!");
+
+        System.out.println("=====");
+        int i = 0;
+
+        while (i < 10) {
+            System.out.println(i);
+            i++;
         }
+
         sc.close();
     }
 }
