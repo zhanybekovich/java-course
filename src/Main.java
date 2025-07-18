@@ -4,47 +4,40 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Simple Calculator Project
+        // Logical Operators
+        // && -> AND
+        // || -> OR
+        // ! -> NOT
         Scanner sc = new Scanner(System.in);
 
-        double num1;
-        double num2;
-        char operator;
-        double result = 0;
-        boolean validOperation = true;
+        double temp = 25;
+        boolean isSunny = true;
 
-        System.out.print("Enter the first number: ");
-        num1 = sc.nextDouble();
-
-        System.out.print("Enter an operator (+, -, *, /, ^: ");
-        operator = sc.next().charAt(0);
-
-        System.out.print("Enter the second number: ");
-        num2 = sc.nextDouble();
-
-        switch (operator) {
-            case '+' -> result = num1 + num2;
-            case '-' -> result = num1 - num2;
-            case '*' -> result = num1 * num2;
-            case '/' -> {
-                if (num2 == 0) {
-                    System.out.println("Cannot divide by zero!");
-                    validOperation = false;
-                } else {
-                    result = num1 / num2;
-                }
-            }
-            case '^' -> result = Math.pow(num1, num2);
-            default -> {
-                System.out.println("Invalid operator!");
-                validOperation = false;
-            }
+        if (temp <= 30 && temp >= 0 && isSunny) {
+            System.out.println("The weather is good!");
+            System.out.println("It is sunny!");
+        } else if (temp <= 30 && temp >= 0 && !isSunny) {
+            System.out.println("The weather is good!");
+            System.out.println("It is cloudy!");
+        } else if (temp >= 30 || temp < 0) {
+            System.out.println("The weather is bad!");
         }
 
-        if (validOperation) {
-            System.out.printf("The result is %.2f", result);
+        System.out.println("========");
+
+        String username;
+
+        System.out.print("Enter your username: ");
+        username = sc.nextLine();
+
+        if (username.length() < 4 || username.length() > 12) {
+            System.out.println("Username must be between 4 and 12 characters!");
+        } else if (username.contains(" ") || username.contains("_")) {
+            System.out.println("Username must not contain spaces or _!");
+
+        } else {
+            System.out.println("Welcome " + username);
         }
-        
         sc.close();
     }
 }
