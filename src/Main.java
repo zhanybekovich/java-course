@@ -4,23 +4,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Temperature Conversion Program
+        // Enhanced switch = a replacement to many else if statements
+
         Scanner sc = new Scanner(System.in);
+        String day;
 
-        double temp;
-        double newTemp;
-        String unit;
+        System.out.print("Enter the day of the week: ");
+        day = sc.nextLine();
 
-        System.out.print("Enter the temperature: ");
-        temp = sc.nextDouble();
-        System.out.print("Convert to Celsius or Fahrenheit? (C or F): ");
-        unit = sc.next().toUpperCase();
+//        switch (day) {
+//            case "Monday" -> System.out.println("It is a weekday 😭");
+//            case "Tuesday" -> System.out.println("It is a weekday 😭");
+//            case "Wednesday" -> System.out.println("It is a weekday 😭");
+//            case "Thursday" -> System.out.println("It is a weekday 😭");
+//            case "Friday" -> System.out.println("It is a weekday 😭");
+//            case "Saturday" -> System.out.println("It is a weekend 😛");
+//            case "Sunday" -> System.out.println("It is a weekend 😛");
+//            default -> System.out.println("Invalid day");
+//        }
 
-        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp * 5 / 9) + 32;
-
-        System.out.printf("The temperature is %.1f°%s", newTemp, unit);
+        switch (day) {
+            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> System.out.println("It is a weekday 😭");
+            case "Saturday", "Sunday" -> System.out.println("It is a weekend 😛");
+            default -> System.out.println("Invalid day");
+        }
 
         sc.close();
-
     }
 }
