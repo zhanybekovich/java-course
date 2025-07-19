@@ -7,28 +7,38 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // entering user input into an array
-        // set the size of an array
-        // String[] foods = new String[3];
+        // search element in the array
 
-        String[] foods;
+        int[] numbers = {1, 3, 5, 2, 9, 24};
+        int target = 20;
+        boolean isFound = false;
 
-        System.out.print("What number food do you want?: ");
-        int size = sc.nextInt();
-        // clean buffer
-        sc.nextLine();
-
-        foods = new String[size];
-
-        for (int i = 0; i < foods.length; i++) {
-            System.out.print("Enter a food: ");
-            foods[i] = sc.nextLine();
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == target) {
+                System.out.println("Element found at index: " + i);
+                isFound = true;
+                break;
+            }
         }
 
-        for (String food : foods) {
-            System.out.println(food);
+        if (!isFound) {
+            System.out.println("Element not found in the array");
         }
 
+        String[] fruits = {"apple", "orange", "banana", "kiwi"};
+        String targetFruit = "kiwi";
+
+        for (int i = 0; i < fruits.length; i++) {
+            if (fruits[i].equals(targetFruit)) {
+                System.out.println("Element found at index: " + i);
+                isFound = true;
+                break;
+            }
+        }
+
+        if (!isFound) {
+            System.out.println("Element not found in the array");
+        }
 
         sc.close();
     }
