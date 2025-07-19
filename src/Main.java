@@ -4,51 +4,43 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String name = "John";
-        int age = 20;
+        System.out.println(add(1, 2));
+        System.out.println(add(1, 2, 3));
+        System.out.println(add(1, 2, 3, 4));
 
-        happyBirthday(name, age);
-        happyBirthday("Bob", 10);
+        String pizza = bakePizza("flat bread");
+        System.out.println(pizza);
 
-        System.out.println(square(3));
-        System.out.println(cube(3));
+        String mozzarellaPizza = bakePizza("flat bread", "mozzarella");
+        System.out.println(mozzarellaPizza);
 
-        System.out.println(getFullName("John", "Doe"));
-
-        if (isAdult(19)) {
-            System.out.println("You can get a credit card!");
-        } else {
-            System.out.println("You can not get a credit card!");
-        }
-
+        String mozzarellaWithPepperoni = bakePizza("flat bread", "mozzarella", "pepperoni");
+        System.out.println(mozzarellaWithPepperoni);
     }
 
-    // method - a block of reusable code that is executed when called()
-    static void happyBirthday(String name, int age) {
-        System.out.println("Happy Birthday to you!");
-        System.out.printf("Happy Birthday dear %s! \n", name);
-        System.out.printf("You are %d years old!\n", age);
-        System.out.println("Happy Birthday to you!\n");
+    // overloaded methods = methods that share the same name, but different parameters
+    static double add(double a, double b) {
+        return a + b;
     }
 
-    // methods returning data
-    static double square(double number) {
-        return number * number;
+    static double add(double a, double b, double c) {
+        return a + b + c;
     }
 
-    static double cube(double number) {
-        return number * number * number;
+    static double add(double a, double b, double c, double d) {
+        return a + b + c + d;
     }
 
-    static String getFullName(String firstName, String lastName) {
-        return firstName + " " + lastName;
+    static String bakePizza(String bread) {
+        return bread + " pizza";
     }
 
-    static boolean isAdult(int age) {
-        if (age >= 18) {
-            return true;
-        } else {
-            return false;
-        }
+    static String bakePizza(String bread, String cheese) {
+        return cheese + " " + bread + " pizza";
     }
+
+    static String bakePizza(String bread, String cheese, String topping) {
+        return topping + " " + cheese + " " + bread + " pizza";
+    }
+
 }
