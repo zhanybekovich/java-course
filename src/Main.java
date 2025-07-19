@@ -3,38 +3,50 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        // Random Number Guessing Game
-        Random random = new Random();
+        // For loop
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("=======");
+
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
+
+        System.out.println("=======");
+
+        for (int i = 1; i <= 10; i += 2) {
+            System.out.println(i);
+        }
+
+        System.out.println("=======");
+
         Scanner scanner = new Scanner(System.in);
 
-        int guess;
-        int attempts = 0;
-        int min = 1;
-        int max = 100;
-        int randomNumber = random.nextInt(min, max + 1);
+        System.out.print("Enter how many times you want to loop: ");
+        int max = scanner.nextInt();
 
-        System.out.println("Number Guessing Game");
-        System.out.printf("Guess a number between %d and %d\n", min, max);
+        for (int i = 1; i <= max; i++) {
+            System.out.println(i);
+        }
 
-        do {
-            System.out.print("Enter a guess: ");
-            guess = scanner.nextInt();
-            attempts++;
+        System.out.println("=======");
 
-            if (guess < randomNumber) {
-                System.out.println("TOO LOW! Try again!");
-            } else if (guess > randomNumber) {
-                System.out.println("TOO HIGH! Try again!");
-            } else {
-                System.out.println("Congratulations! The number was " + randomNumber);
-                System.out.println("Number of attempts: " + attempts);
-            }
+        // Countdown project
+        System.out.print("How many seconds to countdown from: ");
+        int start = scanner.nextInt();
 
-        } while (guess != randomNumber);
+        for (int i = start; i > 0; i--) {
+            System.out.println(i);
+            Thread.sleep(1000);
+        }
 
+        System.out.println("BOOM!");
 
         scanner.close();
+
     }
 }
