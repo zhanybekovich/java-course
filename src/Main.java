@@ -1,52 +1,26 @@
-import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
-        // For loop
+        // break - break out of a loop (STOP)
+        // continue - skip current iteration of a loop (SKIP)
+
         for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
+            if (i == 5) {
+                break;
+            }
+            System.out.print(i + " ");
         }
 
-        System.out.println("=======");
+        System.out.println("\n");
 
-        for (int i = 10; i > 0; i--) {
-            System.out.println(i);
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                continue;
+            }
+            System.out.print(i + " ");
         }
-
-        System.out.println("=======");
-
-        for (int i = 1; i <= 10; i += 2) {
-            System.out.println(i);
-        }
-
-        System.out.println("=======");
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter how many times you want to loop: ");
-        int max = scanner.nextInt();
-
-        for (int i = 1; i <= max; i++) {
-            System.out.println(i);
-        }
-
-        System.out.println("=======");
-
-        // Countdown project
-        System.out.print("How many seconds to countdown from: ");
-        int start = scanner.nextInt();
-
-        for (int i = start; i > 0; i--) {
-            System.out.println(i);
-            Thread.sleep(1000);
-        }
-
-        System.out.println("BOOM!");
-
-        scanner.close();
 
     }
 }
