@@ -1,67 +1,40 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // While loop
-        Scanner sc = new Scanner(System.in);
+        // Random Number Guessing Game
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
 
-        String name = "";
+        int guess;
+        int attempts = 0;
+        int min = 1;
+        int max = 100;
+        int randomNumber = random.nextInt(min, max + 1);
 
-        while (name.isEmpty()) {
-            System.out.print("Please enter your name: ");
-            name = sc.nextLine();
-        }
-
-        System.out.println("Hello, " + name + "!");
-
-        System.out.println("======");
-
-        String response = "";
-
-        while (!response.equals("Q")) {
-            System.out.println("You are playing a game!");
-            System.out.print("Press Q to quit: ");
-            response = sc.nextLine().toUpperCase();
-
-        }
-
-        System.out.println("You have quit the game!");
-
-        System.out.println("========");
-
-        // do while
-        int age;
+        System.out.println("Number Guessing Game");
+        System.out.printf("Guess a number between %d and %d\n", min, max);
 
         do {
-            System.out.println("Your age can't be negative!");
-            System.out.print("Enter your age: ");
-            age = sc.nextInt();
-        } while (age < 0);
+            System.out.print("Enter a guess: ");
+            guess = scanner.nextInt();
+            attempts++;
 
-        System.out.println("You are " + age + " years old!");
+            if (guess < randomNumber) {
+                System.out.println("TOO LOW! Try again!");
+            } else if (guess > randomNumber) {
+                System.out.println("TOO HIGH! Try again!");
+            } else {
+                System.out.println("Congratulations! The number was " + randomNumber);
+                System.out.println("Number of attempts: " + attempts);
+            }
 
-        System.out.println("========");
+        } while (guess != randomNumber);
 
-        int number = 0;
 
-        do {
-            System.out.print("Enter a number between 1 and 10: ");
-            number = sc.nextInt();
-
-        } while (number < 1 || number > 10);
-
-        System.out.println("You picked " + number + "!");
-
-        System.out.println("=====");
-        int i = 0;
-
-        while (i < 10) {
-            System.out.println(i);
-            i++;
-        }
-
-        sc.close();
+        scanner.close();
     }
 }
