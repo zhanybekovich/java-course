@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -5,84 +6,52 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // Dice Rolling Game
+
         Scanner sc = new Scanner(System.in);
 
-        Random random = new Random();
-        int numOfDice;
-        int total = 0;
+        // Array = a collection of values of the same data type
 
-        System.out.print("Enter the number of dice to roll: ");
-        numOfDice = sc.nextInt();
+        String[] fruits = {"apple", "orange", "banana", "kiwi"};
+        System.out.println(fruits[0]);
+        System.out.println(fruits[1]);
 
-        if (numOfDice > 0) {
-            for (int i = 0; i < numOfDice; i++) {
-                int roll = random.nextInt(1, 7);
-                printDie(roll);
-                System.out.println(roll);
-                total = total + roll;
-            }
-        } else {
-            System.out.println("Number of dice must be positive");
+        // changing value at specified index
+        fruits[0] = "pineapple";
+        System.out.println(fruits[0]);
+
+        // length property of an array
+        int numOfFruits = fruits.length;
+        System.out.println(numOfFruits);
+
+        // looping through an array
+        for (int i = 0; i < numOfFruits; i++) {
+            System.out.println(fruits[i]);
         }
 
+        System.out.println("=======");
 
+        // enhanced for loop
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        System.out.println("=========");
+
+        // sort
+        Arrays.sort(fruits);
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        System.out.println("========");
+
+        // fill
+        Arrays.fill(fruits, "****");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
         sc.close();
     }
 
-    static void printDie(int roll) {
-        String dice1 = """
-                 -------
-                |       |
-                |   ●   |
-                |       |
-                 -------
-                """;
-        String dice2 = """
-                 -------
-                | ●     |
-                |       |
-                |     ● |
-                 -------
-                """;
-        String dice3 = """
-                 -------
-                | ●     |
-                |   ●   |
-                |     ● |
-                 -------
-                """;
-        String dice4 = """
-                 -------
-                | ●   ● |
-                |       |
-                | ●   ● |
-                 -------
-                """;
-        String dice5 = """
-                 -------
-                | ●   ● |
-                |   ●   |
-                | ●   ● |
-                 -------
-                """;
-        String dice6 = """
-                 -------
-                | ●   ● |
-                | ●   ● |
-                | ●   ● |
-                 -------
-                """;
-
-        switch (roll) {
-            case 1 -> System.out.print(dice1);
-            case 2 -> System.out.print(dice2);
-            case 3 -> System.out.print(dice3);
-            case 4 -> System.out.print(dice4);
-            case 5 -> System.out.print(dice5);
-            case 6 -> System.out.print(dice6);
-            default -> System.out.println("Invalid roll");
-        }
-    }
 
 }
