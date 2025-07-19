@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -9,47 +7,29 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // Array = a collection of values of the same data type
+        // entering user input into an array
+        // set the size of an array
+        // String[] foods = new String[3];
 
-        String[] fruits = {"apple", "orange", "banana", "kiwi"};
-        System.out.println(fruits[0]);
-        System.out.println(fruits[1]);
+        String[] foods;
 
-        // changing value at specified index
-        fruits[0] = "pineapple";
-        System.out.println(fruits[0]);
+        System.out.print("What number food do you want?: ");
+        int size = sc.nextInt();
+        // clean buffer
+        sc.nextLine();
 
-        // length property of an array
-        int numOfFruits = fruits.length;
-        System.out.println(numOfFruits);
+        foods = new String[size];
 
-        // looping through an array
-        for (int i = 0; i < numOfFruits; i++) {
-            System.out.println(fruits[i]);
+        for (int i = 0; i < foods.length; i++) {
+            System.out.print("Enter a food: ");
+            foods[i] = sc.nextLine();
         }
 
-        System.out.println("=======");
-
-        // enhanced for loop
-        for (String fruit : fruits) {
-            System.out.println(fruit);
+        for (String food : foods) {
+            System.out.println(food);
         }
 
-        System.out.println("=========");
 
-        // sort
-        Arrays.sort(fruits);
-        for (String fruit : fruits) {
-            System.out.println(fruit);
-        }
-
-        System.out.println("========");
-
-        // fill
-        Arrays.fill(fruits, "****");
-        for (String fruit : fruits) {
-            System.out.println(fruit);
-        }
         sc.close();
     }
 
