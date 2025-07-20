@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-        Print the numbers 31, 18, and 79 on one line with a single space between them.
-        Do not use the text '31 18 79'.
+        1.2 Print the numbers 47, 52, and 150 on one line with two spaces between them.
+        Do not use the text '47 52 150'.
         */
 
-        int a = 31;
-        int b = 18;
-        int c = 79;
+        int a = 47;
+        int b = 52;
+        int c = 150;
 
-        System.out.printf("%d %d %d", a, b, c);
+        System.out.printf("%d  %d  %d", a, b, c);
     }
 }
