@@ -5,43 +5,42 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        // varargs = allow a method to accept a varying # of arguments
+        // makes methods more flexible, no need for overloaded methods
+        // java will pack the arguments into an array
 
-        // search element in the array
+        add(1);
+        add(1, 2);
+        add(1, 2, 3);
 
-        int[] numbers = {1, 3, 5, 2, 9, 24};
-        int target = 20;
-        boolean isFound = false;
-
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == target) {
-                System.out.println("Element found at index: " + i);
-                isFound = true;
-                break;
-            }
-        }
-
-        if (!isFound) {
-            System.out.println("Element not found in the array");
-        }
-
-        String[] fruits = {"apple", "orange", "banana", "kiwi"};
-        String targetFruit = "kiwi";
-
-        for (int i = 0; i < fruits.length; i++) {
-            if (fruits[i].equals(targetFruit)) {
-                System.out.println("Element found at index: " + i);
-                isFound = true;
-                break;
-            }
-        }
-
-        if (!isFound) {
-            System.out.println("Element not found in the array");
-        }
-
-        sc.close();
+        System.out.println(average());
+        System.out.println(average(1));
+        System.out.println(average(1, 2));
+        System.out.println(average(1, 2, 3));
+        
     }
 
+    static void add(int... numbers) {
+        int sum = 0;
 
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        System.out.println(sum);
+    }
+
+    static double average(double... numbers) {
+        double sum = 0;
+
+        if (numbers.length == 0) {
+            return 0;
+        }
+
+        for (double number : numbers) {
+            sum += number;
+        }
+
+        return sum / numbers.length;
+    }
 }
