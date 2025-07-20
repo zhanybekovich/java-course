@@ -1,46 +1,43 @@
-import java.util.Scanner;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-        // varargs = allow a method to accept a varying # of arguments
-        // makes methods more flexible, no need for overloaded methods
-        // java will pack the arguments into an array
+        // 2D array = an array where each element is an array
 
-        add(1);
-        add(1, 2);
-        add(1, 2, 3);
+        String[] fruits = {"apple", "orange", "banana"};
+        String[] vegetables = {"potato", "onion", "carrot"};
+        String[] meats = {"chicken", "pork", "beef", "fish"};
 
-        System.out.println(average());
-        System.out.println(average(1));
-        System.out.println(average(1, 2));
-        System.out.println(average(1, 2, 3));
-        
-    }
+        String[][] groceries = {fruits, vegetables, meats};
 
-    static void add(int... numbers) {
-        int sum = 0;
+        // change
+        groceries[0][0] = "pineapple";
+        groceries[1][0] = "celery";
+        groceries[2][0] = "eggs";
 
-        for (int number : numbers) {
-            sum += number;
+        for (String[] foods : groceries) {
+            for (String food : foods) {
+                System.out.print(food + " ");
+            }
+
+            System.out.println();
         }
 
-        System.out.println(sum);
-    }
+        // more example
+        char[][] telephone = {
+                {'1', '2', '3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'},
+                {'*', '0', '#'}
+        };
 
-    static double average(double... numbers) {
-        double sum = 0;
-
-        if (numbers.length == 0) {
-            return 0;
+        for (char[] row : telephone) {
+            for (char number : row) {
+                System.out.print(number + " ");
+            }
+            System.out.println();
         }
-
-        for (double number : numbers) {
-            sum += number;
-        }
-
-        return sum / numbers.length;
     }
 }
