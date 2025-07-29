@@ -3,17 +3,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // inheritance = one class inherits the attributes and methods from another class
-        Dog dog = new Dog();
-        Cat cat = new Cat();
+        // super = refers to the parent class (subclass <- superclass)
+        // used in constructors and method overriding
+        // calls the parent constructor to initialize attributes
 
-        System.out.println(dog.isAlive);
-        System.out.println(cat.isAlive);
+        Person person = new Person("John", "Doe");
+        person.showName();
 
-        dog.eat();
-        dog.speak();
-        cat.eat();
-        cat.speak();
+        Student student = new Student("Harry", "Potter", 3.5);
+        student.showName();
+        student.showGPA();
+
+        Employee employee = new Employee("Rubeus", "Hagrid", 50000);
+        employee.showName();
+        employee.showSalary();
 
     }
 
