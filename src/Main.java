@@ -3,21 +3,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Car car1 = new Car("Mustang", "Red");
-        Car car2 = new Car("Corvette", "Blue");
-        Car car3 = new Car("Charger", "Yellow");
+        // static = makes a variable or method belong to the class rather than to any specific object.
+        // commonly used for utility methods or shared resources
 
-        // array of objects
-        Car[] cars = {car1, car2, car3};
+        // accessing static var via instance reference
+        Friend friend1 = new Friend("John");
+        System.out.println(friend1.numOfFriends);
 
-        for (int i = 0; i < cars.length; i++) {
-            cars[i].drive();
-        }
+        Friend friend2 = new Friend("Bob");
+        System.out.println(friend2.numOfFriends);
 
-        for (Car car : cars) {
-            car.drive();
-        }
+        Friend friend3 = new Friend("Sara");
+        System.out.println(friend3.numOfFriends);
 
+        // accessing static var via class
+        System.out.println(Friend.numOfFriends);
+
+        // calling static method
+        Friend.showFriends();
     }
 
 }
