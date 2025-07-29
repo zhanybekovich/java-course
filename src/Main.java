@@ -3,29 +3,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // overloaded constructors = allow a class to have multiple constructors
-        // with different parameter lists
-        // Enable objects to be initialized in various ways.
+        Car car1 = new Car("Mustang", "Red");
+        Car car2 = new Car("Corvette", "Blue");
+        Car car3 = new Car("Charger", "Yellow");
 
-        User user1 = new User("John");
-        System.out.println(user1.username);
-        System.out.println(user1.email);
-        System.out.println(user1.age);
+        // array of objects
+        Car[] cars = {car1, car2, car3};
 
-        User user2 = new User("Bob", "bob@gmail.com");
-        System.out.println(user2.username);
-        System.out.println(user2.email);
-        System.out.println(user2.age);
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].drive();
+        }
 
-        User user3 = new User("Sandy", "sandy@email.com", 18);
-        System.out.println(user3.username);
-        System.out.println(user3.email);
-        System.out.println(user3.age);
+        for (Car car : cars) {
+            car.drive();
+        }
 
-        User user4 = new User();
-        System.out.println(user4.username);
-        System.out.println(user4.email);
-        System.out.println(user4.age);
     }
 
 }
