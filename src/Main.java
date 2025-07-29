@@ -3,24 +3,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // static = makes a variable or method belong to the class rather than to any specific object.
-        // commonly used for utility methods or shared resources
+        // inheritance = one class inherits the attributes and methods from another class
+        Dog dog = new Dog();
+        Cat cat = new Cat();
 
-        // accessing static var via instance reference
-        Friend friend1 = new Friend("John");
-        System.out.println(friend1.numOfFriends);
+        System.out.println(dog.isAlive);
+        System.out.println(cat.isAlive);
 
-        Friend friend2 = new Friend("Bob");
-        System.out.println(friend2.numOfFriends);
+        dog.eat();
+        dog.speak();
+        cat.eat();
+        cat.speak();
 
-        Friend friend3 = new Friend("Sara");
-        System.out.println(friend3.numOfFriends);
-
-        // accessing static var via class
-        System.out.println(Friend.numOfFriends);
-
-        // calling static method
-        Friend.showFriends();
     }
 
 }
