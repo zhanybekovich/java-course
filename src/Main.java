@@ -3,24 +3,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // abstract = Used to abstract classes and methods.
-        // Abstraction is the process of hiding implementation details
-        // and showing only the essential features.
-        // Abstract classes CAN'T be instantiated directly
-        // Can contain 'abstract' methods (which must be implemented)
-        // Can contain 'concrete' methods (which are inherited)
+        // Interface = A blueprint for a class that specifies a set of abstract methods
+        // that implementing classes MUST define.
+        // Supports multiple inheritance-like behavior
 
-        Circle circle = new Circle(3);
-        Triangle triangle = new Triangle(4, 5);
-        Rectangle rectangle = new Rectangle(6, 7);
+        Rabbit rabbit = new Rabbit();
+        rabbit.flee();
 
-        circle.display();
-        triangle.display();
-        rectangle.display();
+        Hawk hawk = new Hawk();
+        hawk.hunt();
 
-        System.out.println(circle.area());
-        System.out.println(triangle.area());
-        System.out.println(rectangle.area());
+        Fish fish = new Fish();
+        fish.flee();
+        fish.hunt();
+
     }
 
 }

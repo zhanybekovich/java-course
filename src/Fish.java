@@ -1,8 +1,12 @@
-public class Fish extends Animal {
+public class Fish implements Prey, Predator {
 
-    // best practice to add annotation for overriding methods
     @Override
-    void move() {
-        System.out.println("This animal is swimming");
+    public void flee() {
+        System.out.println("The fish is swimming away");
+    }
+
+    @Override
+    public void hunt() {
+        System.out.println("The fish is hunting");
     }
 }
