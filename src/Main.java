@@ -3,20 +3,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Interface = A blueprint for a class that specifies a set of abstract methods
-        // that implementing classes MUST define.
-        // Supports multiple inheritance-like behavior
+        // Polymorphism = Objects can identify as other objects.
+        // Objects can be treated as objects of a common superclass.
 
-        Rabbit rabbit = new Rabbit();
-        rabbit.flee();
+        Car car = new Car();
+        Bike bike = new Bike();
+        Boat boat = new Boat();
 
-        Hawk hawk = new Hawk();
-        hawk.hunt();
+        car.go();
+        bike.go();
+        boat.go();
 
-        Fish fish = new Fish();
-        fish.flee();
-        fish.hunt();
+        Vehicle[] vehicles = {car, bike, boat};
 
+        for (Vehicle vehicle : vehicles) {
+            vehicle.go();
+        }
     }
 
 }
