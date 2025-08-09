@@ -4,21 +4,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Getters and setters help protect object data and add rules for accessing or modifying them.
-        // Getters = methods that make a field Readable
-        // Setter = methods that make a field writable
+        // Aggregation = Represents a 'has-a' relationship between objects.
+        // One object contains another object as a part of its structure.
+        // but the contained object/s can exist independently.
 
-        Car car = new Car("Charger", "Yellow", 10000);
+        Book book1 = new Book("The Fellowship of the Ring", 423);
+        Book book2 = new Book("The Two Towers", 352);
+        Book book3 = new Book("The Return of the King", 416);
 
-        // call getters
-        System.out.println(car.getColor() + " " + car.getModel() + " " + car.getPrice());
+        Book[] books = {book1, book2, book3};
 
-        // call setters
-        car.setColor("Blue");
-        car.setPrice(12000);
-
-        System.out.println(car.getColor() + " " + car.getModel() + " " + car.getPrice());
-
+        Library library = new Library("NYC Public Library", 1898, books);
+        library.displayInfo();
     }
 
 }
